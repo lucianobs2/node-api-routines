@@ -55,19 +55,19 @@ export class User {
     return this.props.updatedAt;
   }
 
-  public setName(name: string) {
+  public set Name(name: string) {
     this.props.name = name;
   }
 
-  public setSurname(surname: string) {
+  public set Surname(surname: string) {
     this.props.surname = surname;
   }
 
-  public setEmail(email: string) {
+  public set Email(email: string) {
     this.props.email = email;
   }
 
-  public setAvatarUrl(avatarUrl: string) {
+  public set AvatarUrl(avatarUrl: string) {
     this.props.avatarUrl = avatarUrl;
   }
 
