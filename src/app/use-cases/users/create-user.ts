@@ -1,4 +1,5 @@
-import { UsersRepository } from '../repositories/users-repository';
+import { User } from '@/app/entities/user';
+import { UsersRepository } from '@/app/repositories/users-repository';
 
 interface ICreateUserRequest {
   name: string;
@@ -16,10 +17,12 @@ export class CreateUserUseCase {
       throw new Error('User already exists');
     }
 
-    await this.usersRepository.create({
+    const user = new User({
       name,
       surname,
       email,
     });
+
+    await this.usersRepository.create(user);
   }
 }

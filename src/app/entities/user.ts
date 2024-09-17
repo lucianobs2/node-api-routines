@@ -5,25 +5,22 @@ export interface UserProps {
   name: string;
   surname: string;
   email: string;
-  avatarUrl?: string | undefined | null;
+  avatarUrl?: string | null;
+  createdAt?: Date;
   updatedAt?: Date | null;
-  createdAt?: Date | null;
 }
 
 export class User {
   private _id: string;
   private props: UserProps;
 
-  constructor(
-    props: Replace<UserProps, { createdAt?: Date; updatedAt?: Date }>,
-    id?: string,
-  ) {
+  constructor(props: Replace<UserProps, { createdAt?: Date }>, id?: string) {
     this._id = id ?? randomUUID();
     this.props = {
       ...props,
-      avatarUrl: props.avatarUrl ?? null,
       createdAt: props.createdAt ?? new Date(),
       updatedAt: props.updatedAt ?? null,
+      avatarUrl: props.avatarUrl ?? null,
     };
   }
 
@@ -43,7 +40,7 @@ export class User {
     return this.props.email;
   }
 
-  public get avatarUrl() {
+  public get avatarURL() {
     return this.props.avatarUrl;
   }
 
@@ -55,19 +52,19 @@ export class User {
     return this.props.updatedAt;
   }
 
-  public set Name(name: string) {
+  public set name(name: string) {
     this.props.name = name;
   }
 
-  public set Surname(surname: string) {
+  public set surname(surname: string) {
     this.props.surname = surname;
   }
 
-  public set Email(email: string) {
+  public set email(email: string) {
     this.props.email = email;
   }
 
-  public set AvatarUrl(avatarUrl: string) {
+  public set avatarUrl(avatarUrl: string) {
     this.props.avatarUrl = avatarUrl;
   }
 

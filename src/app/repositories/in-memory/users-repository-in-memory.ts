@@ -1,11 +1,10 @@
-import { User } from '@/app/entities/user';
-import { CreateUserDTO } from '../../dtos/create-user';
+import { User, UserProps } from '@/app/entities/user';
 import { UsersRepository } from '../users-repository';
 
 export class UsersRepositoryInMemory implements UsersRepository {
   users: User[] = [];
 
-  async create({ name, surname, email }: CreateUserDTO) {
+  async create({ name, surname, email }: UserProps) {
     const user = new User({
       name,
       surname,
