@@ -6,6 +6,7 @@ describe('Entity User', () => {
     const user = new User({
       name: 'John',
       surname: 'Doe',
+      email: 'johndoe@test.com',
     });
 
     expect(user).toHaveProperty('id');
@@ -14,6 +15,7 @@ describe('Entity User', () => {
       expect.objectContaining({
         name: 'John',
         surname: 'Doe',
+        email: 'johndoe@test.com',
       }),
     );
   });

@@ -4,6 +4,7 @@ import { Replace } from '../helpers/Replace';
 export interface UserProps {
   name: string;
   surname: string;
+  email: string;
   avatarUrl?: string | undefined | null;
   updatedAt?: Date | null;
   createdAt?: Date | null;
@@ -38,6 +39,10 @@ export class User {
     return this.props.surname;
   }
 
+  public get email() {
+    return this.props.email;
+  }
+
   public get avatarUrl() {
     return this.props.avatarUrl;
   }
@@ -56,6 +61,10 @@ export class User {
 
   public setSurname(surname: string) {
     this.props.surname = surname;
+  }
+
+  public setEmail(email: string) {
+    this.props.email = email;
   }
 
   public setAvatarUrl(avatarUrl: string) {

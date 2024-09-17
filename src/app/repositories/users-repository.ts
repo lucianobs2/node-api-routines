@@ -4,4 +4,5 @@ import { User } from '../entities/user';
 export interface UsersRepository {
   create(data: CreateUserDTO): Promise<void>;
   findById(id: string): Promise<User | undefined>;
+  findByEmail(email: string): Promise<User | undefined>;
 }

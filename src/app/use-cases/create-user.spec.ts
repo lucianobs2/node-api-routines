@@ -15,14 +15,29 @@ describe('Create User', () => {
     const newUser = new User({
       name: 'John',
       surname: 'Doe',
+      email: 'johndoe@test.com',
     });
 
     await createUserUseCase.execute(newUser);
 
-    // const user = inMemoryUsersRepository.findById(newUser.id);
+    expect(newUser).toHaveProperty('id');
+  });
 
-    // console.log(user);
+  it('should not be able create a user with same email', async () => {
+    const newUser = new User({
+      name: 'John',
+      surname: 'Doe',
+      email: 'johndoe@test.com',
+    });
 
-    // expect(user).toHaveProperty('id');
+    await createUserUseCase.execute(newUser);
+
+    await expect(
+      createUserUseCase.execute({
+        name: 'John',
+        surname: 'Doe',
+        email: 'johndoe@test.com',
+      }),
+    ).rejects.toThrow('User already exists');
   });
 });
