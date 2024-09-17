@@ -1,5 +1,5 @@
+import { UsersRepositoryInMemory } from '@/app//repositories/in-memory/users-repository-in-memory';
 import { User } from '@/app/entities/user';
-import { UsersRepositoryInMemory } from '@/app/repositories/in-memory/users-repository-in-memory';
 import { beforeEach, describe, it } from 'vitest';
 import { CreateUserUseCase } from './create-user';
 
