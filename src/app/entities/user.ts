@@ -1,0 +1,68 @@
+import { randomUUID } from 'node:crypto';
+import { Replace } from '../helpers/Replace';
+
+export interface UserProps {
+  name: string;
+  surname: string;
+  avatarUrl?: string | undefined | null;
+  updatedAt?: Date | null;
+  createdAt?: Date | null;
+}
+
+export class User {
+  private _id: string;
+  private props: UserProps;
+
+  constructor(
+    props: Replace<UserProps, { createdAt?: Date; updatedAt?: Date }>,
+    id?: string,
+  ) {
+    this._id = id ?? randomUUID();
+    this.props = {
+      ...props,
+      avatarUrl: props.avatarUrl ?? null,
+      createdAt: props.createdAt ?? new Date(),
+      updatedAt: props.updatedAt ?? null,
+    };
+  }
+
+  public get id() {
+    return this._id;
+  }
+
+  public get name() {
+    return this.props.name;
+  }
+
+  public get surname() {
+    return this.props.surname;
+  }
+
+  public get avatarUrl() {
+    return this.props.avatarUrl;
+  }
+
+  public get createdAt() {
+    return this.props.createdAt;
+  }
+
+  public get updatedAt() {
+    return this.props.updatedAt;
+  }
+
+  public setName(name: string) {
+    this.props.name = name;
+  }
+
+  public setSurname(surname: string) {
+    this.props.surname = surname;
+  }
+
+  public setAvatarUrl(avatarUrl: string) {
+    this.props.avatarUrl = avatarUrl;
+  }
+
+  public updated() {
+    this.props.updatedAt = new Date();
+  }
+}

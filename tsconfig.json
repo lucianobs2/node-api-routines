@@ -6,17 +6,19 @@
     "lib": ["es2023"],
     "module": "node16",
     "target": "es2022",
-    "baseUrl": "./",
     "types": [
       "vitest/globals"
-    ],    
+    ],     
+    "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     "paths": {
       "@/*": ["./src/*"]
-    },
+    }, 
 
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "node16"
+    "moduleResolution": "node16",
+    "experimentalDecorators": true,
+    "useDefineForClassFields": true,
   }
 }
