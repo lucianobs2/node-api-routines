@@ -19,4 +19,8 @@ export class UsersRepositoryInMemory implements UsersRepository {
 
     return user;
   }
+
+  async findMany() {
+    return this.users;
+  }
 }

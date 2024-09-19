@@ -10,7 +10,7 @@ interface ICreateUserRequest {
 export class CreateUserUseCase {
   constructor(private usersRepository: UsersRepository) {}
 
-  async execute({ name, surname, email }: ICreateUserRequest) {
+  async execute({ name, surname, email }: ICreateUserRequest): Promise<void> {
     const userAlreadyExists = await this.usersRepository.findByEmail(email);
 
     if (userAlreadyExists) {
