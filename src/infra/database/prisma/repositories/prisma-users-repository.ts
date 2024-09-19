@@ -1,5 +1,5 @@
-import { User } from '@/app/modules/employee/entities/user';
-import { UsersRepository } from '@/app/modules/employee/repositories/users-repository';
+import { User } from '@/app/modules/employees/entities/user';
+import { UsersRepository } from '@/app/modules/employees/repositories/users-repository';
 import { prisma } from '..';
 import { PrismaUsersMapper } from '../mappers/prisma-users.mapper';
 
