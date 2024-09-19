@@ -23,6 +23,8 @@ model TimeBank {
   employee         User             @relation(fields: [userId], references: [id])
   userId           String
   timeBankCategory TimeBankCategory @default(NORMAL)
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime?
 }
 
 enum TimeBankCategory {

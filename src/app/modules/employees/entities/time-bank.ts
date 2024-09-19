@@ -3,6 +3,7 @@ import { Replace } from '../helpers/Replace';
 
 export interface TimeBankProps {
   employeeId: string;
+  timeBankCategory: 'EMERGENCY_2X' | 'EMERGENCY_1X' | 'NORMAL';
   createdAt?: Date;
   updatedAt?: Date | null;
 }
@@ -18,6 +19,7 @@ export class TimeBank {
     this._id = id ?? randomUUID();
     this.props = {
       ...props,
+      timeBankCategory: props.timeBankCategory ?? 'NORMAL',
       createdAt: props.createdAt ?? new Date(),
       updatedAt: props.updatedAt ?? null,
     };
@@ -29,6 +31,10 @@ export class TimeBank {
 
   public get employeeId() {
     return this.props.employeeId;
+  }
+
+  public get category() {
+    return this.props.timeBankCategory;
   }
 
   public get createdAt() {
