@@ -1,4 +1,4 @@
-import { makeGetUserUseCase } from '@/app/use-cases/users/@factories/make-get-user-use-case';
+import { makeGetUserUseCase } from '@/app/modules/employee/use-cases/users/@factories/make-get-user-use-case';
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { z } from 'zod';
 import { userHttpViewModel } from './view-model/user-view-model';

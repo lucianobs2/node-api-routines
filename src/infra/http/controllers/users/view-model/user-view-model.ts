@@ -1,4 +1,4 @@
-import { User } from '@/app/entities/user';
+import { User } from '@/app/modules/employee/entities/user';
 
 export function userHttpViewModel(user: User) {
   return {

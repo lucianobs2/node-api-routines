@@ -1,4 +1,4 @@
-import { makeCreateUserUseCase } from '@/app/use-cases/users/@factories/make-create-user-use-case';
+import { makeCreateUserUseCase } from '@/app/modules/employee/use-cases/users/@factories/make-create-user-use-case';
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { z } from 'zod';
 

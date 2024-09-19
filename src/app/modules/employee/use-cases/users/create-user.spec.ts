@@ -1,6 +1,6 @@
-import { UsersRepositoryInMemory } from '@/app//repositories/in-memory/users-repository-in-memory';
-import { User } from '@/app/entities/user';
 import { beforeEach, describe, it } from 'vitest';
+import { User } from '../../entities/user';
+import { UsersRepositoryInMemory } from '../../repositories/in-memory/users-repository-in-memory';
 import { CreateUserUseCase } from './create-user';
 
 let usersRepositoryInMemory: UsersRepositoryInMemory;
